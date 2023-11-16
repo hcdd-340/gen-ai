@@ -6,13 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Happy View -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/happyView"
+        style="@style/Widget.MaterialComponents.ShapeableImageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sadView"
+        app:srcCompat="@drawable/happy"
+        app:shapeAppearanceOverlay="@style/circularShape" />
+
     <TextView
+        android:id="@+id/happyLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Happy"
+        app:layout_constraintTop_toBottomOf="@+id/happyView"
+        app:layout_constraintStart_toStartOf="@+id/happyView"
+        app:layout_constraintEnd_toEndOf="@+id/happyView"
+        android:layout_marginTop="2dp"
+        style="@style/TextAppearance.AppCompat.Body2" />
+
+    <!-- Sad View -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/sadView"
+        style="@style/Widget.MaterialComponents.ShapeableImageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/happyView"
+        app:layout_constraintEnd_toStartOf="@+id/angryView"
+        app:srcCompat="@drawable/sad"
+        app:shapeAppearanceOverlay="@style/circularShape" />
+
+    <TextView
+        android:id="@+id/sadLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sad"
+        app:layout_constraintTop_toBottomOf="@+id/sadView"
+        app:layout_constraintStart_toStartOf="@+id/sadView"
+        app:layout_constraintEnd_toEndOf="@+id/sadView"
+        android:layout_marginTop="2dp"
+        style="@style/TextAppearance.AppCompat.Body2" />
+
+    <!-- Angry View -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/angryView"
+        style="@style/Widget.MaterialComponents.ShapeableImageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sadView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/angry"
+        app:shapeAppearanceOverlay="@style/circularShape" />
+
+    <TextView
+        android:id="@+id/angryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Angry"
+        app:layout_constraintTop_toBottomOf="@+id/angryView"
+        app:layout_constraintStart_toStartOf="@+id/angryView"
+        app:layout_constraintEnd_toEndOf="@+id/angryView"
+        android:layout_marginTop="2dp"
+        style="@style/TextAppearance.AppCompat.Body2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
